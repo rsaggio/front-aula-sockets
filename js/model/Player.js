@@ -10,50 +10,14 @@ class Player {
         this.alive = true
     }
 
-    handleControls(key) {
-        
-        if(!this.alive) return;
-
-        switch(key) {
-            case 'w':
-                this.y -= this.speed
-                break;
-            case 's':
-                this.y += this.speed
-                break;
-            case 'a':
-                this.x -= this.speed
-                break;
-            case 'd':
-                this.x += this.speed
-                break;
-            case ' ':
-                this.shoot()
-        }
-    }
-
-    shoot() {
-        if(!this.alive) return;
-        let bullet = new Bullet(this);
-        this.world.addGameObject(bullet);
-    }
-
     die() {
         this.alive = false
         alert("Fim de jogo")
         window.location.reload()
     }
 
-    setWorld(world) {
-        this.world = world
-    }
-
     collide(target) {
         this.die()
-    }
-
-    update() {
-
     }
 
     draw(context) {

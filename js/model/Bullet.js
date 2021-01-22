@@ -1,24 +1,15 @@
 class Bullet {
 
-    constructor(player) {
-        this.x = player.x + player.size;
-        this.y = player.y + player.size/2;
-        this.size = 5;
-        this.speed = 10;
-        this.alive = true
-        this.world = null
-    }
-
-    setWorld(world) {
-        this.world = world
+    constructor(data) {
+        this.x = data.x;
+        this.y = data.y;
+        this.size = data.size;
+        this.speed = data.speed;
+        this.alive = data.alive
     }
 
     collide(target) {
         this.alive = false;
-    }
-
-    update() {
-        this.x += this.speed
     }
 
     draw(context) {
